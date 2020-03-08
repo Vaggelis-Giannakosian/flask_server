@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+
+  <!-- Disable tap highlight on IE -->
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/apple-icon-180x180.png">
+  <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
+
+  <title>Title page</title>
+
+<link href="{{ url_for('static', filename='css/main.3f6952e4.css') }}" rel="stylesheet"></head>
+
+<body class="{%- if request.path == '/index.html' or request.path == '/' %} minimal {% endif %}">
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+<!-- Add your content of header -->
+<header>
+  <nav class="navbar  navbar-fixed-top {%- if request.path == '/index.html' or request.path == '/' %} navbar-inverse {% else %} navbar-default {% endif %} ">
+    <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav ">
+          <li><a href="index.html" title="">01 : Home</a></li>
+          <li><a href="works.html" class="{%- if request.path == '/works.html' or request.path == '/' %} active {% endif %}" title="">02 : Works</a></li>
+          <li><a href="about.html" class="{%- if request.path == '/about.html' or request.path == '/' %} active {% endif %}" title="">03 : About me</a></li>
+          <li><a href="contact.html" class="{%- if request.path == '/contact.html' or request.path == '/' %} active {% endif %}"  title="">04 : Contact</a></li>
+          <li><a href="components.html"  class="{%- if request.path == '/components.html' or request.path == '/' %} active {% endif %}" title="">05 : Components</a></li>
+        </ul>
+
+
+      </div>
+    </div>
+  </nav>
+</header>

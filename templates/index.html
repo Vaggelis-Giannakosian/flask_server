@@ -1,16 +1,34 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MY WEBSITE</title>
-    <script src="../static/js/script.js"></script>
-    <link rel="stylesheet" href="../static/css/style.css" type="text/css" media="all">
+{% include "header.html" %}
 
-</head>
-<body>
-    My simple web page
-</body>
-</html>
+
+<!-- Add your site or app content here -->
+  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('{{ url_for('static', filename='img/space.jpg') }}')">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="hero-full-wrapper">
+            <div class="text-content">
+              <h1>Hello,<br>
+                <span id="typed-strings">
+                  <span>I'm James Dean</span>
+                  <span>French Designer</span>
+                  <span>Working as a Freelance</span>
+                </span>
+                <span id="typed"></span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     type();
+     movingBackgroundImage();
+  });
+</script>
+
+
+{% include "footer.html" %}
