@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request ,redirect
+import csv
 app = Flask(__name__)
 
 
@@ -11,13 +12,22 @@ def my_home():
 def html_page(page_name):
     return render_template(page_name)
 
+def write_to_file(data):
+    with open("database.txt", mode="a") as db:
+        file = db.write(f'Email: {data.get("email")}, Subject: {data.get("subject")}, Message: {data.get("message")} \n')
+
+def write_to_csv(data):
+    with open('database.csv', mode='a', newline='') as db:
+        csv_writer = csv.writer(db, delimiter=',',  quotechar='"', quoting=csv.QUOTE_MINIMAL)
+        csv_writer.writerow([data.get('email'), data.get('subject'), data.get('message')])
 
 @app.route('/submit_form', methods=['POST', 'GET'])
 def submit_form():
     if request.method == 'POST':
         data = request.form.to_dict()
-        print(data)
+        write_to_csv(data)
         return redirect('thankyou.html')
     else:
         return 'sth went wrong. Try again'
+
 
